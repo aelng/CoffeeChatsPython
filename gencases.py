@@ -22,6 +22,13 @@ names = [
     "Emma", "Brandon", "Helen",
 ]
 
+professions = [
+    "Computer Engineer",
+    "IOS Developer",
+    "Data Scientist",
+    "Web Developer",
+]
+
 interests = [
     "Artificial Intelligence",
     "Machine Learning",
@@ -58,6 +65,12 @@ def persongen():
     f.write(names[rand])
     f.write("\n")
     taken[rand] = True
+
+    # Generate profession
+    rand = random.randint(0, 3)
+    f.write(professions[rand])
+    f.write("\n")
+
 
     # Generate interests
     takenn = []
@@ -101,3 +114,4 @@ for i in range(15):
 for i in range(3):
     persongen()
 
+f.close()

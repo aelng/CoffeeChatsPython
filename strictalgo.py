@@ -1,31 +1,56 @@
 # Profession, Interests (up to 3), Hobbies (up to 3)
-aspiring = [
-    {'Name': "Musa", 'Profession': "programming", 'Interests': ['AI', 'ML', 'Cloud Computing'], 'Hobbies': ['Basketball', 'Chess', "Golf"]},
-    {'Name': "George", 'Profession': "programming", 'Interests': ['AI', 'ML', 'Cloud Computing'], 'Hobbies': ['Basketball', 'Chess', "Golf"]},
-    {'Name': "Joseph", 'Profession': "programming", 'Interests': ['AI', 'ML', 'jo'], 'Hobbies': ['Basketball', 'Chess', "Golf"]}
-]
+aspiring = []
+
+# Profession, Interests (up to 3), Hobbies (up to 3)
+executive = []
 
 # 5 days per week, start time to end time (24-hour format)
-aspireav = {
-    'Musa': [[8, 17], [8, 17], [8, 17], [8, 17], [8, 17]],
-    'George': [[8, 17], [8, 17], [8, 17], [8, 17], [8, 17]],
-    'Joseph': [[8, 17], [8, 17], [8, 17], [8, 17], [8, 17]],
-}
+aspireav = {}
 
-executive = [
-    {'Name': "Daniel", 'Profession': "programming", 'Interests': ['AI', 'ML', 'Cloud Computing'], 'Hobbies': ['Basketball', 'Chess', "Golf"]}
-]
+# 5 days per week, start time to end time (24-hour format)
+execav = {}
 
-execav = {
-    'Daniel': [[8, 9], [2, 2], [2, 2], [2, 2], [2, 2]],
-}
+
+
+
+f = open("testcase.txt", "r")
+
+# Reading aspiring professional data
+for i in range(15):
+    name = f.readline().strip()
+    profession = f.readline().strip()
+    interests = [f.readline().strip, f.readline().strip(), f.readline().strip()]
+    hobbies = [f.readline().strip, f.readline().strip(), f.readline().strip()]
+    timings = []
+    for i in range(5):
+        values = f.readline().split()
+        timings.append([int(values[0]), int(values[1])])
+
+    aspiring.append({'Name': name, 'Profession': profession, 'Interests': interests, 'Hobbies': hobbies})
+    aspireav[name] = timings
+
+
+# Reading executive data
+for i in range(3):
+    name = f.readline().strip()
+    profession = f.readline().strip()
+    interests = [f.readline().strip, f.readline().strip(), f.readline().strip()]
+    hobbies = [f.readline().strip, f.readline().strip(), f.readline().strip()]
+    timings = []
+    for i in range(5):
+        values = f.readline().split()
+        timings.append([int(values[0]), int(values[1])])
+
+    executive.append({'Name': name, 'Profession': profession, 'Interests': interests, 'Hobbies': hobbies})
+    execav[name] = timings
+
+chats = []
 
 rankings = []
 
 for ex in executive:
     rankings.append({'Name': ex['Name'], 'people': []})
 
-chats = []
 
 for ex in executive:
     for prof in aspiring:
