@@ -1,32 +1,68 @@
-# Profession, Interests (up to 3), Availability - 24 hour time
+# Profession, Interests (up to 3), Hobbies (up to 3)
 aspiring = [
-    {'Name': "Musa", 'Profession': "programming", 'Interests': ['AI', 'ML'], 'Availability': 12},
-    {'Name': "George", 'Profession': "programming", 'Interests': ['AI', 'ML'], 'Availability': 12},
-    {'Name': "Joseph", 'Profession': "programming", 'Interests': ['AI', 'ML'], 'Availability': 12}
+    {'Name': "Musa", 'Profession': "programming", 'Interests': ['AI', 'ML', 'Cloud Computing'], 'Hobbies': ['Basketball', 'Chess', "Golf"]},
+    {'Name': "George", 'Profession': "programming", 'Interests': ['AI', 'ML', 'Cloud Computing'], 'Hobbies': ['Basketball', 'Chess', "Golf"]},
+    {'Name': "Joseph", 'Profession': "programming", 'Interests': ['AI', 'ML', 'jo'], 'Hobbies': ['Basketball', 'Chess', "Golf"]}
 ]
 
+# 5 days per week, start time to end time
+apireav = {
+    'Musa': [[8, 17], [8, 17], [8, 17], [8, 17], [8, 17]],
+    'George': [[8, 17], [8, 17], [8, 17], [8, 17], [8, 17]],
+    'Joseph': [[8, 17], [8, 17], [8, 17], [8, 17], [8, 17]],
+}
+
 executive = [
-    {'Name': "Daniel", 'Profession': "programming", 'Interests': ['AI', 'ML'], 'Availability': 12, 'Frequency': 1}
+    {'Name': "Daniel", 'Profession': "programming", 'Interests': ['AI', 'ML', 'Cloud Computing'], 'Hobbies': ['Basketball', 'Chess', "Golf"]}
 ]
+
+execav = {
+    'Daniel': [[8, 17], [8, 17], [8, 17], [8, 17], [8, 17]],
+}
+
+rankings = []
+
+for ex in executive:
+    rankings.append({'Name': ex['Name'], 'people': []})
 
 chats = []
 
-for prof in aspiring:
-    for ex in executive:
+for ex in executive:
+    for prof in aspiring:
+
         # Matching score - points awarded out of 10 that determine if a professional and executive are a good match
         Mscore = 0
         if prof['Profession'] == ex['Profession']:
             Mscore+=4
-        if prof['Availability'] == ex['Availability']:
-            Mscore+=3
-        for i in range(2):
+        for i in range(3):
             if ex['Interests'].__contains__(prof['Interests'][i]):
                 Mscore+=1
+        for i in range(3):
+            if ex['Hobbies'].__contains__(prof['Hobbies'][i]):
+                Mscore+=1
 
-    # If matching score is high enough, and the executive has less than 3 already planned coffee chats, create another
-    if Mscore > 7 and ex['Frequency'] < 3:
-        chats.append ({'Aspiring': prof['Name'], 'Executive': ex['Name']})
-        ex['Frequency'] += 1
+        # Placing aspiring professional on a list of the executives coffee chat rankings (with a frequency cut off)
+        for ran in rankings:
+            if ran['Name'] == ex['Name']:
+                new_pair = (prof['Name'], Mscore)
+                ran['people'].append(new_pair)
+
+        # Sorting the aspiring professionals by matching score
+        for ran in rankings:
+            if ran['Name'] == ex['Name']:
+                ran['people'] = sorted(ran['people'], key=lambda x: (x[1], x[0]))
+                ran['people'].reverse()
+
+freq = 0 # The number of meetings scheduled already (maximizes at 2)
+
+for ex in executive:
+    for ran in rankings:
+        if ran['Name'] == ex['Name']:
+            for j in ran['people']:
+                print(ran['people'])
+
+
+
 
 # list out chats
 print("Scheduled chats:")
