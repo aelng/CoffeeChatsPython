@@ -55,6 +55,7 @@ for ex in executive:
 
 for ex in executive:
     freq = 0  # The number of meetings scheduled already (maximizes at 2)
+    # Scheduling coffee chats with aspiring professionals that have the highest matching score and the same availability
     for ran in rankings:
         if ran['Name'] == ex['Name']:
             for j in ran['people']:
@@ -67,9 +68,7 @@ for ex in executive:
                             chats.append(execname + " and " + aspname)
                             break
 
-
-
-# list out chats
+# List out coffee chats
 print("Coffee chats:")
 for chat in chats:
     print(chat)
