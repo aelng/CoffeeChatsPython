@@ -5,6 +5,7 @@
 import random
 
 # File writer
+open('testcase.txt', 'w').close()
 f = open("testcase.txt", "a")
 
 names = [
@@ -48,18 +49,55 @@ taken = []
 for i in range(80):
     taken.append(False)
 
-# Generating 15 different aspiring professionals and saving to testcase.txt file
-for i in range(15):
+def persongen():
+    # Generate name
     rand = random.randint(0, 79)
     if taken[rand]:
         while taken[rand]:
             rand = random.randint(0, 79)
     f.write(names[rand])
+    f.write("\n")
     taken[rand] = True
+
+    # Generate interests
+    takenn = []
+    for i in range(8):
+        takenn.append(False)
     for i in range(3):
         rand = random.randint(0, 7)
+        if takenn[rand]:
+            while takenn[rand]:
+                rand = random.randint(0, 7)
+        takenn[rand] = True
         f.write(interests[rand])
+        f.write("\n")
+
+    # Generate hobbies
+    takenn = []
+    for i in range(8):
+        takenn.append(False)
     for i in range(3):
         rand = random.randint(0, 7)
+        if takenn[rand]:
+            while takenn[rand]:
+                rand = random.randint(0, 7)
+        takenn[rand] = True
         f.write(hobbies[rand])
+        f.write("\n")
+
+    # Generate schedules
+    for i in range(5):
+        start = random.randint(7, 10)
+        end = random.randint(start + 1, 18)
+        f.write(start.__str__() + " " + end.__str__())
+        f.write('\n')
+
+
+# Generating 15 different aspiring professionals and saving to testcase.txt file
+for i in range(15):
+    persongen()
+
+# Generating 3 different executives
+for i in range(3):
+    persongen()
 

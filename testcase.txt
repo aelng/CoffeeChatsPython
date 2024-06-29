@@ -1,0 +1,216 @@
+William
+Operating Systems
+Computer Networks
+Data Structures
+Traveling
+Cooking
+Reading
+10 14
+7 17
+8 17
+8 14
+7 13
+Daniel
+Cyber Security
+Operating Systems
+Computer Networks
+Photography
+Gardening
+Traveling
+10 17
+8 12
+9 13
+7 14
+7 10
+James
+Artificial Intelligence
+Data Structures
+Databases
+Traveling
+Hiking
+Cycling
+7 11
+10 11
+7 17
+7 18
+8 11
+Jason
+Data Structures
+Artificial Intelligence
+Databases
+Gardening
+Painting
+Photography
+8 13
+9 13
+10 13
+7 9
+8 11
+Mary
+Cyber Security
+Databases
+Artificial Intelligence
+Reading
+Cycling
+Photography
+8 12
+9 16
+10 17
+8 13
+8 13
+Thomas
+Machine Learning
+Operating Systems
+Artificial Intelligence
+Traveling
+Photography
+Reading
+8 15
+9 18
+10 15
+9 16
+7 13
+Dorothy
+Operating Systems
+Computer Networks
+Databases
+Painting
+Cycling
+Reading
+7 14
+10 18
+7 14
+7 14
+9 11
+Brenda
+Machine Learning
+Data Structures
+Algorithms
+Hiking
+Gardening
+Reading
+8 16
+9 13
+8 13
+10 16
+7 11
+Cynthia
+Computer Networks
+Databases
+Algorithms
+Cycling
+Traveling
+Painting
+8 17
+9 16
+10 17
+8 13
+8 12
+Scott
+Algorithms
+Cyber Security
+Data Structures
+Reading
+Painting
+Cycling
+10 12
+7 9
+7 10
+10 12
+8 13
+Jennifer
+Operating Systems
+Machine Learning
+Cyber Security
+Photography
+Traveling
+Cycling
+8 18
+9 11
+7 14
+8 17
+7 13
+Carol
+Cyber Security
+Artificial Intelligence
+Computer Networks
+Gardening
+Cooking
+Reading
+7 15
+9 10
+9 15
+7 10
+7 11
+Michelle
+Databases
+Computer Networks
+Algorithms
+Reading
+Traveling
+Photography
+7 18
+9 13
+8 18
+9 12
+9 18
+Ahmed
+Operating Systems
+Algorithms
+Machine Learning
+Gardening
+Hiking
+Cooking
+10 15
+9 15
+9 13
+10 18
+8 12
+Melissa
+Algorithms
+Databases
+Artificial Intelligence
+Painting
+Traveling
+Cooking
+9 15
+9 15
+10 14
+8 11
+9 14
+Ali
+Databases
+Algorithms
+Data Structures
+Photography
+Cooking
+Reading
+10 12
+10 12
+8 9
+10 12
+9 10
+Barbara
+Computer Networks
+Operating Systems
+Databases
+Cycling
+Photography
+Gardening
+9 16
+7 13
+8 13
+7 11
+7 14
+Musa
+Cyber Security
+Artificial Intelligence
+Machine Learning
+Photography
+Painting
+Traveling
+10 12
+10 18
+7 14
+9 11
+7 8
