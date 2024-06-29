@@ -5,8 +5,8 @@ aspiring = [
     {'Name': "Joseph", 'Profession': "programming", 'Interests': ['AI', 'ML', 'jo'], 'Hobbies': ['Basketball', 'Chess', "Golf"]}
 ]
 
-# 5 days per week, start time to end time
-apireav = {
+# 5 days per week, start time to end time (24-hour format)
+aspireav = {
     'Musa': [[8, 17], [8, 17], [8, 17], [8, 17], [8, 17]],
     'George': [[8, 17], [8, 17], [8, 17], [8, 17], [8, 17]],
     'Joseph': [[8, 17], [8, 17], [8, 17], [8, 17], [8, 17]],
@@ -17,7 +17,7 @@ executive = [
 ]
 
 execav = {
-    'Daniel': [[8, 17], [8, 17], [8, 17], [8, 17], [8, 17]],
+    'Daniel': [[8, 9], [2, 2], [2, 2], [2, 2], [2, 2]],
 }
 
 rankings = []
@@ -53,18 +53,23 @@ for ex in executive:
                 ran['people'] = sorted(ran['people'], key=lambda x: (x[1], x[0]))
                 ran['people'].reverse()
 
-freq = 0 # The number of meetings scheduled already (maximizes at 2)
-
 for ex in executive:
+    freq = 0  # The number of meetings scheduled already (maximizes at 2)
     for ran in rankings:
         if ran['Name'] == ex['Name']:
             for j in ran['people']:
-                print(ran['people'])
-
+                aspname = j[0]
+                execname = ran['Name']
+                for i in range(5):
+                    if aspireav[aspname][i][0] >= execav[execname][i][0] and aspireav[aspname][i][0] <= execav[execname][i][1] or aspireav[aspname][i][1] >= execav[execname][i][0] and aspireav[aspname][i][1] <= execav[execname][i][1]:
+                        if freq < 2:
+                            freq+=1
+                            chats.append(execname + " and " + aspname)
+                            break
 
 
 
 # list out chats
-print("Scheduled chats:")
+print("Coffee chats:")
 for chat in chats:
-    print(chat['Aspiring'], "and", chat['Executive'])
+    print(chat)
