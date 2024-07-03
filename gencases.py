@@ -100,8 +100,8 @@ def persongen():
 
     # Generate schedules
     for i in range(5):
-        start = random.randint(7, 10)
-        end = random.randint(start + 1, 18)
+        start = random.randint(7, 10) # starting time 7AM to 10AM
+        end = random.randint(start + 1, 18) # ending time (start time + 1) to 6PM
         f.write(start.__str__() + " " + end.__str__())
         f.write('\n')
 
